@@ -1,3 +1,5 @@
+#####For the code to work you will need an image, scroll down to see.
+
 from tkinter import *
 from english_school_code import *
 import pickle
@@ -45,12 +47,14 @@ elif school_created == True:
     
 def gui():
     window = Tk()
-    window.title("Cocoon Software")
+    window.title("Jubilee Software")
     window.geometry("860x450")
-    #window.wm_iconbitmap("who.ico")
+    #####For the code to work you will need an image here
+    window.wm_iconbitmap("you will need an .ico image for your icon")
     window.configure(background="powder blue")
     
-    photo = PhotoImage(file="me.gif")
+    #####For the code to work you will need an image here
+    photo = PhotoImage(file="you will need a .gif image size 150x150")
     photo_label = Label(window, image=photo, bg="powder blue")
     
     text = Text(window, height=7, width=107)
@@ -82,10 +86,10 @@ def gui():
         if student > " ":
             student = student.lower()
             student_name = student.capitalize()
-            if student in student_data:  # Is student in student_data.
+            if student in student_data:  
                     text_two.delete(1.0, END)
                     text_two.insert(END, "Please choose a new name, that student alredy exsists.")
-            elif student not in student_data:  # Is not in student_data.
+            elif student not in student_data: 
                     text_two.delete(1.0, END)
                     text_two.insert(END, "Student created: " + student_name)
                     all_students.append(student)
@@ -145,10 +149,10 @@ def gui():
         new_class = new_class.lower()
         if new_class > " ":
             append_new_class = new_class
-            if new_class in classes:#Is student in student_data.
+            if new_class in classes:
                 text_two.delete(1.0, END)
                 text_two.insert(END,"Please choose a new name, that class already exists.")
-            elif new_class not in classes:#Is not in student_data.
+            elif new_class not in classes:
                 all_classes.append(append_new_class)
                 class_created = Lesson(new_class)
                 classes[new_class] = class_created
@@ -231,7 +235,7 @@ def gui():
                     inStu = item.capitalize()
                     text.insert(END, " " + inStu + ",")
                 text.insert(END, "\n")
-                text.insert(END,"Lessosns taken: ")
+                text.insert(END,"Lessons taken: ")
                 less = classes[print_off].lessons_taken
                 for item in less:
                     capLess = item.capitalize()
